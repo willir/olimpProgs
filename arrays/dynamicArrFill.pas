@@ -1,8 +1,9 @@
 program dynamicArrFill1;
+type
+    MyArrType = array[1..20] of integer;
 var
-    i:integer;
     arr1:array of integer;
-    arr2:array[1..20] of integer;
+    arr2:MyArrType;
 {----------------------------------------}
 procedure fillArrValue(arr:array of integer);
 var
@@ -36,6 +37,18 @@ begin
     writeln;
 end;
 {----------------------------------------}
+procedure showStaticArr(var arr:MyArrType);
+var
+    i:integer;
+begin
+    writeln('length(arr):', length(arr), '; low(arr):', low(arr), '; high(arr):', high(arr));
+    for i:=low(arr) to high(arr) do
+    begin
+        write(arr[i], ' ');
+    end;
+    writeln;
+end;
+{----------------------------------------}
 begin
     setLength(arr1, 17);
     showArr(arr1);
@@ -59,7 +72,10 @@ begin
     writeln('-------------------');
 
     writeln('length(arr2):', length(arr2), '; low(arr2):', low(arr2), '; high(arr2):', high(arr2));
+    fillArr(arr2);
     showArr(arr2);
+    writeln('-------------------');
+    showStaticArr(arr2);
     writeln('-------------------');
 
 end.

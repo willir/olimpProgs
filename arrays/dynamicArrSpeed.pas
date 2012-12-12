@@ -21,12 +21,6 @@ var
     arr: array of integer;
 begin
     setLength(arr, 200);
-{
-    for i:=low(arr) to high(arr) do
-    begin
-        arr[i] := i;
-    end;
-}
     fillArr(arr);
 
     if count > 0 then
@@ -38,12 +32,7 @@ var
     arr: array[0..199] of integer;
 begin
     fillArr(arr);
-{
-    for i:=low(arr) to high(arr) do
-    begin
-        arr[i] := i;
-    end;
-}
+
     if count > 0 then
         createStaticArr(count - 1);
 end;
