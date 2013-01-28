@@ -27,7 +27,7 @@ begin
         arr[i] := i;
     end;
 }
-{    fillArr(arr);}
+    fillArr(arr);
 
     if count > 0 then
         createDynamicArr(count - 1);
@@ -37,13 +37,14 @@ procedure createStaticArr(count: longword);
 var
     arr: array[0..199] of integer;
 begin
-{    fillArr(arr);}
 {
     for i:=low(arr) to high(arr) do
     begin
         arr[i] := i;
     end;
 }
+    fillArr(arr);
+
     if count > 0 then
         createStaticArr(count - 1);
 end;
